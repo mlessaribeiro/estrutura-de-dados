@@ -1,9 +1,6 @@
-/* ========== ARVORE BINARIA DE PESQUISA ==========*/
-
 #include <stdio.h>
 #include <stdlib.h>
 
-/* ========== TIPOS DE DADOS ==========*/
 #define true  1
 #define false 0
 typedef unsigned char bool;
@@ -191,30 +188,6 @@ void esvaziar (t_arvore *raiz) {
 		esvaziar(&(*raiz)->dir);
 		free(*raiz);
 		*raiz = NULL;
-	}
-}
-
-void exibirPreOrdem (t_arvore raiz) {
-	if(raiz != NULL) {
-		printf("%d ", raiz->dado.num);
-		exibirPreOrdem(raiz->esq);
-		exibirPreOrdem(raiz->dir);
-	}
-}
-
-void exibirInOrdem (t_arvore raiz) {
-	if(raiz != NULL) {
-		exibirInOrdem(raiz->esq);
-		printf("%d ", raiz->dado.num);
-		exibirInOrdem(raiz->dir);
-	}
-}
-
-void exibirPosOrdem (t_arvore raiz) {
-	if(raiz != NULL) {
-		exibirPosOrdem(raiz->esq);
-		exibirPosOrdem(raiz->dir);
-		printf("%d ", raiz->dado.num);
 	}
 }
 
